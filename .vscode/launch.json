@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+        "name": "GDB debug",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${config:VARISCITE.PROGRAM}",
+        "args": [],
+        "stopAtEntry": true,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "MIMode": "gdb",
+        "targetArchitecture": "arm",
+        "preLaunchTask": "var-deploy-gdb",
+        "setupCommands": [{
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+        }],
+        "miDebuggerPath": "/opt/poky/3.1.22/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux/arm-poky-linux-gdb",
+        "miDebuggerServerAddress": "${config:VARISCITE.TARGET_IP}:3000",
+    }]
+}
